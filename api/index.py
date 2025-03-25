@@ -163,10 +163,3 @@ def proxy_gemini():
     
     except Exception as e:
         return jsonify({"error": f"Server error: {str(e)}"}), 500
-
-# For Vercel serverless deployment
-app.debug = True
-
-# Function for Vercel to call
-def handler(request, context):
-    return app(request)
