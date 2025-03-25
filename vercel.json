@@ -1,15 +1,9 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python"
-    }
-  ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "api/index.py"
-    }
+    { "src": "/health", "dest": "/api/route" },
+    { "src": "/proxy/claude", "dest": "/api/route" },
+    { "src": "/proxy/openai", "dest": "/api/route" },
+    { "src": "/proxy/gemini", "dest": "/api/route" },
+    { "src": "/(.*)", "dest": "/api/route" }
   ]
 }
